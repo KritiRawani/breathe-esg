@@ -42,6 +42,10 @@ def process_sap_csv(file, uploaded_by):
 
             scope="Scope 1",
 
+            activity_value=float(
+                row.get("amount", 0)
+            ),
+
             emission_kg_co2e=float(
                 row.get("amount", 0)
             ),
@@ -49,6 +53,6 @@ def process_sap_csv(file, uploaded_by):
             status="PENDING",
 
             is_suspicious=False
-        )
+        )   
 
     return data_source
