@@ -38,6 +38,8 @@ def process_sap_csv(file, uploaded_by):
         # CREATE EMISSION RECORD
         EmissionRecord.objects.create(
 
+            source_record_id=str(_),
+
             category=row.get("category", "General"),
 
             scope="Scope 1",
