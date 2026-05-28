@@ -1,7 +1,10 @@
 import pandas as pd
 
 from .models import DataSource, RawRecord
+
 from tenants.models import Tenant
+
+from emissions.models import EmissionRecord
 
 
 def process_sap_csv(file, uploaded_by):
@@ -11,10 +14,11 @@ def process_sap_csv(file, uploaded_by):
     tenant = Tenant.objects.first()
 
     if not tenant:
+
         tenant = Tenant.objects.create(
             name="Breathe ESG",
             industry="Technology"
-    )
+        )
 
     data_source = DataSource.objects.create(
         tenant=tenant,
@@ -29,6 +33,22 @@ def process_sap_csv(file, uploaded_by):
             data_source=data_source,
             raw_data=row.to_dict(),
             processing_status='PROCESSED'
+        )
+
+        # CREATE EMISSION RECORD
+        EmissionRecord.objects.create(
+
+            category=row.get("category", "General"),
+
+            scope="Scope 1",
+
+            emission_kg_co2e=float(
+                row.get("amount", 0)
+            ),
+
+            status="PENDING",
+
+            is_suspicious=False
         )
 
     return data_source
