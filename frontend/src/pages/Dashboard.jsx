@@ -85,7 +85,7 @@ const Dashboard = () => {
 
           {/* Upload Section */}
           <div className="mt-10">
-            <UploadPage />
+            <UploadPage fetchDashboard={fetchDashboard} />
           </div>
 
           {/* Emission Table */}

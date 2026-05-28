@@ -3,7 +3,7 @@ import { useState } from "react";
 import API from "../services/api";
 
 
-const UploadPage = () => {
+const UploadPage = ({ fetchDashboard }) => {
 
   const [file, setFile] = useState(null);
 
@@ -33,6 +33,10 @@ const UploadPage = () => {
       setMessage(response.data.message);
 
       alert("Upload successful");
+
+      fetchDashboard();
+
+      window.location.reload();
 
     } catch (error) {
 
