@@ -33,7 +33,7 @@ const EmissionTable = () => {
             await API.post(
                 `/reviews/approve/${id}/`,
                 {
-                    reviewed_by: "kriti"
+                    reviewed_by: "Kriti"
                 }
             );
 
@@ -53,7 +53,7 @@ const EmissionTable = () => {
             await API.post(
                 `/reviews/reject/${id}/`,
                 {
-                    reviewed_by: "kriti"
+                    reviewed_by: "Kriti"
                 }
             );
 

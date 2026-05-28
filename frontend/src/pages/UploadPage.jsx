@@ -21,7 +21,7 @@ const UploadPage = () => {
 
     formData.append("file", file);
 
-    formData.append("uploaded_by", "kriti");
+    formData.append("uploaded_by", "Kriti");
 
     try {
 
