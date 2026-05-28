@@ -29,7 +29,8 @@ def process_sap_csv(file, uploaded_by):
 
     for _, row in df.iterrows():
 
-        RawRecord.objects.create(
+        # SAVE RAW RECORD
+        raw_record = RawRecord.objects.create(
             data_source=data_source,
             raw_data=row.to_dict(),
             processing_status='PROCESSED'
@@ -38,7 +39,9 @@ def process_sap_csv(file, uploaded_by):
         # CREATE EMISSION RECORD
         EmissionRecord.objects.create(
 
-            source_record_id=str(_),
+            tenant=tenant,
+
+            source_record_id=str(raw_record.id),
 
             category=row.get("category", "General"),
 
