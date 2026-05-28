@@ -10,6 +10,12 @@ def process_sap_csv(file, uploaded_by):
 
     tenant = Tenant.objects.first()
 
+    if not tenant:
+        tenant = Tenant.objects.create(
+            name="Breathe ESG",
+            industry="Technology"
+    )
+
     data_source = DataSource.objects.create(
         tenant=tenant,
         source_type='SAP',
