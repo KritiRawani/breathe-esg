@@ -105,3 +105,4 @@ Backend:
 - Real emission factor APIs
 - Authentication and RBAC
 - Advanced dashboard analytics
+- Export dashboard reports as CSV files
