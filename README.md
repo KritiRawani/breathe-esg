@@ -1,4 +1,5 @@
-# Breathe ESG Sustainability Platform
+# ESG Dashboard Version 2.0
+# Breathe ESG Tech Intern Assignment
 
 This project is a full-stack ESG data ingestion and analyst review platform built using Django REST Framework and React.
 
