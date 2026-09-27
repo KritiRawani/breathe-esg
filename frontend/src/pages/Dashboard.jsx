@@ -66,24 +66,10 @@ const Dashboard = () => {
             />
 
             <StatCard
-              title="Rejected Records"
-              value={summary.rejected_records}
-            />
-
-            <StatCard
-              title="Flagged Records"
-              value={summary.flagged_records}
-            />
-
-            <StatCard
-              title="Pending Records"
+              title="Pending Reviews"
               value={summary.pending_records}
             />
 
-            <StatCard
-              title="Total Emissions"
-              value={summary.total_emissions_kg_co2e}
-            />
 
           </div>
 
