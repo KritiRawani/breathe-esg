@@ -48,6 +48,9 @@ const Dashboard = () => {
           <h1 className="text-3xl font-bold mb-6">
             ESG Sustainability Dashboard
           </h1>
+          <p className="text-gray-600 mb-6">
+            Monitor emissions data, approvals, and sustainability metrics.
+          </p>
 
           <div className="grid grid-cols-3 gap-6">
 
